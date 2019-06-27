@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:portfolio/utils/app_clip_path.dart';
 import 'package:portfolio/utils/colors.dart';
 import 'package:portfolio/widgets/contact.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
@@ -9,9 +10,12 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: _largeScreen(context),
-      smallScreen: _smallScreen(context),
+    return ClipPath(
+      clipper: AppClipPath(AppClipPath.CLICP_TOP),
+      child: ResponsiveWidget(
+        largeScreen: _largeScreen(context),
+        smallScreen: _smallScreen(context),
+      ),
     );
   }
 
@@ -27,8 +31,11 @@ class Footer extends StatelessWidget {
           width: double.infinity,
         ),
         Container(
-          padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width / 5, vertical: 30),
+          padding: EdgeInsets.only(
+              right: MediaQuery.of(context).size.width / 5,
+              left: MediaQuery.of(context).size.width / 5,
+              top: 100,
+              bottom: 10),
           color: AppColors.blackTransparent,
           child: Column(
             children: <Widget>[

@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:portfolio/utils/app_clip_path.dart';
 import 'package:portfolio/utils/colors.dart';
 import 'package:portfolio/widgets/projects.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
@@ -14,9 +15,12 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: _largeScreen(context),
-      smallScreen: _smallScreen(context),
+    return ClipPath(
+      clipper: AppClipPath(AppClipPath.CLIP_BOTTOM),
+      child: ResponsiveWidget(
+        largeScreen: _largeScreen(context),
+        smallScreen: _smallScreen(context),
+      ),
     );
   }
 
@@ -239,7 +243,7 @@ class Header extends StatelessWidget {
 
   Widget _smallScreen(BuildContext context) {
     return Container(
-      height: 600,
+      height: 700,
       child: Stack(children: [
         Image.asset(
           'images/cover.jpg',
