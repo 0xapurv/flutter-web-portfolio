@@ -1,5 +1,6 @@
 import 'package:flutter_web/material.dart';
 import 'package:portfolio/utils/colors.dart';
+import 'package:portfolio/widgets/projects.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 
 class Header extends StatelessWidget {
@@ -41,6 +42,14 @@ class Header extends StatelessWidget {
         );
       },
     );
+  }
+
+  void _onClickNeedProject(BuildContext context) {
+    _showDialog(context, _need_project, 'Comming Soon');
+  }
+
+  void _onClickLookingToHire(BuildContext context) {
+    _showDialog(context, _looking_to_hire, 'Comming Soon');
   }
 
   Widget _largeScreen(BuildContext context) {
@@ -85,6 +94,7 @@ class Header extends StatelessWidget {
                         )),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       OutlineButton(
                         onPressed: () {},
@@ -107,10 +117,21 @@ class Header extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        width: 50,
+                        width: 30,
                       ),
-                      InkWell(
-                        onTap: () {},
+                      OutlineButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed(Projects.id),
+                        splashColor: AppColors.redAccent,
+                        highlightedBorderColor: AppColors.redAccent,
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 2,
+                        ),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                         child: Text(
                           "PROJECTS",
                           style: TextStyle(
@@ -120,10 +141,21 @@ class Header extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        width: 50,
+                        width: 30,
                       ),
-                      InkWell(
-                        onTap: () {},
+                      OutlineButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed(Projects.id),
+                        splashColor: AppColors.redAccent,
+                        highlightedBorderColor: AppColors.redAccent,
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 2,
+                        ),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                         child: Text(
                           "CONTACT",
                           style: TextStyle(
@@ -166,9 +198,7 @@ class Header extends StatelessWidget {
               Row(
                 children: <Widget>[
                   RaisedButton(
-                    onPressed: () {
-                      _showDialog(context, _need_project, 'Comming Soon');
-                    },
+                    onPressed: () => _onClickNeedProject(context),
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                     color: AppColors.redAccent,
                     child: Text(
@@ -185,9 +215,7 @@ class Header extends StatelessWidget {
                     width: 10,
                   ),
                   RaisedButton(
-                    onPressed: () {
-                      _showDialog(context, _looking_to_hire, 'Comming Soon');
-                    },
+                    onPressed: () => _onClickLookingToHire(context),
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                     color: Colors.grey[700],
                     child: Text(
@@ -280,7 +308,7 @@ class Header extends StatelessWidget {
                 height: 40,
               ),
               RaisedButton(
-                onPressed: () {},
+                onPressed: () => _onClickNeedProject(context),
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 color: AppColors.redAccent,
                 child: Text(
@@ -297,7 +325,7 @@ class Header extends StatelessWidget {
                 width: 10,
               ),
               RaisedButton(
-                onPressed: () {},
+                onPressed: () => _onClickLookingToHire(context),
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 color: Colors.grey[700],
                 child: Text(

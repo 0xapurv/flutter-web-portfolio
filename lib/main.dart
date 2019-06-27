@@ -7,6 +7,7 @@ import 'package:portfolio/utils/colors.dart';
 import 'package:portfolio/widgets/body.dart';
 import 'package:portfolio/widgets/footer.dart';
 import 'package:portfolio/widgets/header.dart';
+import 'package:portfolio/widgets/projects.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 
 void main() => runApp(MyApp());
@@ -15,11 +16,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Abdelouahed Portfolio',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
+      routes: {
+        Projects.id: (context) => Projects(),
+      },
       home: MyHomePage(),
     );
   }
@@ -106,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ListTile(
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed(Projects.id),
               title: Text(
                 "PROJECTS",
                 style: TextStyle(

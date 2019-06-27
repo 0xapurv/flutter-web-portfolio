@@ -30,32 +30,39 @@ class Footer extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width / 5, vertical: 30),
           color: AppColors.blackTransparent,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          child: Column(
             children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.white),
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: AssetImage('images/me.jpg'),
-                            fit: BoxFit.cover)),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  _socialIcons(),
-                ],
-              ),
               Expanded(
-                  child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Container(width: 600, child: Contact())))
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        Container(
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: AssetImage('images/me.jpg'),
+                                  fit: BoxFit.cover)),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        _socialIcons(),
+                      ],
+                    ),
+                    Expanded(
+                        child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Container(width: 600, child: Contact()))),
+                  ],
+                ),
+              ),
+              _copyRight()
             ],
           ),
         ),
@@ -83,30 +90,37 @@ class Footer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                Align(
-                  alignment: Alignment.center,
-                  child: Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.white),
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: AssetImage('images/me.jpg'),
-                            fit: BoxFit.cover)),
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white),
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: AssetImage('images/me.jpg'),
+                                  fit: BoxFit.cover)),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      _socialIcons(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Expanded(
+                          child: Align(
+                              alignment: Alignment.centerRight,
+                              child: Container(width: 600, child: Contact()))),
+                    ],
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                _socialIcons(),
-                SizedBox(
-                  height: 20,
-                ),
-                Expanded(
-                    child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Container(width: 600, child: Contact())))
+                _copyRight()
               ],
             ),
           ),
@@ -118,9 +132,8 @@ class Footer extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         InkWell(
-          onTap: () {
-            html.window.open('https://github.com/GeekAbdelouahed', 'Github');
-          },
+          onTap: () =>
+              html.window.open('https://github.com/GeekAbdelouahed', 'Github'),
           child: Image.asset(
             'images/github.png',
             height: iconSize,
@@ -131,11 +144,8 @@ class Footer extends StatelessWidget {
           width: 20,
         ),
         InkWell(
-          onTap: () {
-            html.window.open(
-                'https://www.linkedin.com/in/abdelouahed-medjoudja/',
-                'Linkedin');
-          },
+          onTap: () => html.window.open(
+              'https://www.linkedin.com/in/abdelouahed-medjoudja/', 'Linkedin'),
           child: Image.asset(
             'images/linkedin.png',
             height: iconSize,
@@ -146,10 +156,8 @@ class Footer extends StatelessWidget {
           width: 20,
         ),
         InkWell(
-          onTap: () {
-            html.window.open(
-                'https://www.facebook.com/AbdelouahedMedjoudja', 'Facebook');
-          },
+          onTap: () => html.window.open(
+              'https://www.facebook.com/AbdelouahedMedjoudja', 'Facebook'),
           child: Image.asset(
             'images/facebook.png',
             height: iconSize,
@@ -160,15 +168,46 @@ class Footer extends StatelessWidget {
           width: 20,
         ),
         InkWell(
-          onTap: () {
-            html.window.open('https://twitter.com/MedAbdelouahed', 'Twitter');
-          },
+          onTap: () =>
+              html.window.open('https://twitter.com/MedAbdelouahed', 'Twitter'),
           child: Image.asset(
             'images/twitter.png',
             height: iconSize,
             width: iconSize,
           ),
         ),
+      ],
+    );
+  }
+
+  Widget _copyRight() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        Icon(
+          Icons.copyright,
+          size: 20,
+          color: Colors.white,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text(
+          'Abdelouahed Medjoudja . 2019',
+          style: TextStyle(color: Colors.white),
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        InkWell(
+          onTap: () =>
+              html.window.open('https://github.com/GeekAbdelouahed', 'Github'),
+          child: Text(
+            'Github',
+            style: TextStyle(
+                decoration: TextDecoration.underline, color: Colors.white),
+          ),
+        )
       ],
     );
   }
