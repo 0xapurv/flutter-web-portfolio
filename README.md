@@ -1,6 +1,6 @@
 ## Flutter Portfolio
 
-Demo : https://geekabdelouahed.github.io/Flutter-Portfolio
+Preview : https://geekabdelouahed.github.io/Flutter-Portfolio
 
 <kbd><img src="screenshot/web1.png" width="400"></kbd>
 <kbd><img src="screenshot/web2.png" width="400"></kbd>
