@@ -7,7 +7,7 @@ import 'package:portfolio/widgets/responsive_widget.dart';
 class Header extends StatelessWidget {
   final String _title = 'Mobile and Web Developer.';
   final String _description =
-      'you have a vision i help to build it with all love 😍.';
+      'you have a vision i help build it with all love 😍.';
   final String _need_project = 'I NEED TO BUILD PROJECT';
 
   const Header();
