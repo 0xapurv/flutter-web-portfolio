@@ -4,17 +4,22 @@ import 'package:portfolio/utils/colors.dart';
 import 'package:portfolio/widgets/contact.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 import 'dart:html' as html;
+import '../data/projects.dart' as dataprojects;
 
 class Footer extends StatelessWidget {
   final double iconSize = 35;
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: AppClipPath(AppClipPath.CLICP_TOP),
-      child: ResponsiveWidget(
-        largeScreen: _largeScreen(context),
-        smallScreen: _smallScreen(context),
+    return Container(
+      color:
+          dataprojects.projects.length.isEven ? Colors.black87 : Colors.white,
+      child: ClipPath(
+        clipper: AppClipPath(AppClipPath.CLICP_TOP),
+        child: ResponsiveWidget(
+          largeScreen: _largeScreen(context),
+          smallScreen: _smallScreen(context),
+        ),
       ),
     );
   }
@@ -79,6 +84,8 @@ class Footer extends StatelessWidget {
 
   Widget _smallScreen(BuildContext context) {
     return Container(
+        color:
+            dataprojects.projects.length.isEven ? Colors.black87 : Colors.white,
         height: 600,
         child: Stack(children: [
           Image.asset(
@@ -89,9 +96,11 @@ class Footer extends StatelessWidget {
             width: double.infinity,
           ),
           Container(
-            padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width / 10,
-                vertical: 30),
+            padding: EdgeInsets.only(
+                right: MediaQuery.of(context).size.width / 20,
+                left: MediaQuery.of(context).size.width / 20,
+                top: 60,
+                bottom: 10),
             color: AppColors.blackTransparent,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -191,17 +200,17 @@ class Footer extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        Icon(
-          Icons.copyright,
-          size: 20,
-          color: Colors.white,
+        Text(
+          'Abdelouahed Medjoudja . 2019',
+          style: TextStyle(color: Colors.white),
         ),
         SizedBox(
           width: 5,
         ),
-        Text(
-          'Abdelouahed Medjoudja . 2019',
-          style: TextStyle(color: Colors.white),
+        Icon(
+          Icons.copyright,
+          size: 15,
+          color: Colors.white,
         ),
         SizedBox(
           width: 10,

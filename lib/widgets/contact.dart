@@ -27,7 +27,7 @@ class Contact extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 15,
+              width: 10,
             ),
             Expanded(
               child: Container(
@@ -48,7 +48,7 @@ class Contact extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 15,
+              width: 10,
             ),
             Expanded(
               child: Container(
@@ -71,7 +71,7 @@ class Contact extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 15,
+          height: 10,
         ),
         Container(
           width: double.infinity,
@@ -91,7 +91,7 @@ class Contact extends StatelessWidget {
             maxLines: 7,
           ),
         ),
-        SizedBox(height: 15),
+        SizedBox(height: 10),
         Align(
           alignment: Alignment.centerRight,
           child: RaisedButton(

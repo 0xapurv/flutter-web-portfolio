@@ -20,6 +20,7 @@ class Projects extends StatelessWidget {
               children: dataprojects.projects
                   .map((project) => ProjectItem(
                         project: project,
+                        index: dataprojects.projects.indexOf(project),
                       ))
                   .toList(),
             ),

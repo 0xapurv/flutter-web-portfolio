@@ -1,7 +1,5 @@
 import 'package:flutter_web/material.dart';
-import 'package:portfolio/utils/colors.dart';
 import 'package:portfolio/widgets/project.dart';
-import 'package:portfolio/widgets/projects.dart';
 import '../data/projects.dart' as dataprojects;
 
 class Body extends StatelessWidget {
@@ -10,8 +8,7 @@ class Body extends StatelessWidget {
     return Column(
       children: dataprojects.projects
           .map((project) => ProjectItem(
-                project: project,
-              ))
+              project: project, index: dataprojects.projects.indexOf(project)))
           .toList(),
     );
   }

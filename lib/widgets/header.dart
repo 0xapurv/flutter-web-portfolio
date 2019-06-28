@@ -7,19 +7,21 @@ import 'package:portfolio/widgets/responsive_widget.dart';
 class Header extends StatelessWidget {
   final String _title = 'Mobile and Web Developer.';
   final String _description =
-      'have around 4 years of working on many projects and different techniques (java, kotlin, php, flutter, laravel...) with all Love 😍.';
-  final String _need_project = 'I need to create project';
-  final String _looking_to_hire = "I'm looking to hire";
+      'you have a vision i help to build it with all love 😍.';
+  final String _need_project = 'I NEED TO BUILD PROJECT';
 
   const Header();
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: AppClipPath(AppClipPath.CLIP_BOTTOM),
-      child: ResponsiveWidget(
-        largeScreen: _largeScreen(context),
-        smallScreen: _smallScreen(context),
+    return Container(
+      color: Colors.white,
+      child: ClipPath(
+        clipper: AppClipPath(AppClipPath.CLIP_BOTTOM),
+        child: ResponsiveWidget(
+          largeScreen: _largeScreen(context),
+          smallScreen: _smallScreen(context),
+        ),
       ),
     );
   }
@@ -50,10 +52,6 @@ class Header extends StatelessWidget {
 
   void _onClickNeedProject(BuildContext context) {
     _showDialog(context, _need_project, 'Comming Soon');
-  }
-
-  void _onClickLookingToHire(BuildContext context) {
-    _showDialog(context, _looking_to_hire, 'Comming Soon');
   }
 
   Widget _largeScreen(BuildContext context) {
@@ -181,6 +179,7 @@ class Header extends StatelessWidget {
                     fontSize: 60,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
+                textAlign: TextAlign.center,
               ),
               SizedBox(
                 height: 10,
@@ -188,21 +187,20 @@ class Header extends StatelessWidget {
               Text(
                 _description,
                 style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w300,
-                  color: Colors.white,
-                  letterSpacing: 1.1,
-                  wordSpacing: 1.1,
-                  height: 1.7,
+                  fontSize: 25,
+                  color: Colors.grey[300],
                 ),
+                textAlign: TextAlign.center,
               ),
               SizedBox(
                 height: 50,
               ),
-              Row(
-                children: <Widget>[
-                  RaisedButton(
+              Align(
+                alignment: Alignment.center,
+                child: RaisedButton(
                     onPressed: () => _onClickNeedProject(context),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25)),
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                     color: AppColors.redAccent,
                     child: Text(
@@ -213,27 +211,8 @@ class Header extends StatelessWidget {
                         color: Colors.white,
                         letterSpacing: 1.1,
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  RaisedButton(
-                    onPressed: () => _onClickLookingToHire(context),
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                    color: Colors.grey[700],
-                    child: Text(
-                      _looking_to_hire,
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white,
-                        letterSpacing: 1.1,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                    )),
+              )
             ],
           ),
         ),
@@ -293,6 +272,7 @@ class Header extends StatelessWidget {
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
+                textAlign: TextAlign.center,
               ),
               SizedBox(
                 height: 10,
@@ -300,45 +280,31 @@ class Header extends StatelessWidget {
               Text(
                 _description,
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: FontWeight.w300,
-                  color: Colors.white,
-                  letterSpacing: 1.1,
-                  wordSpacing: 1.1,
-                  height: 1.7,
+                  color: Colors.grey[300],
                 ),
+                textAlign: TextAlign.center,
               ),
               SizedBox(
                 height: 40,
               ),
-              RaisedButton(
-                onPressed: () => _onClickNeedProject(context),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                color: AppColors.redAccent,
-                child: Text(
-                  _need_project,
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.white,
-                    letterSpacing: 1.1,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              RaisedButton(
-                onPressed: () => _onClickLookingToHire(context),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                color: Colors.grey[700],
-                child: Text(
-                  _looking_to_hire,
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.white,
-                    letterSpacing: 1.1,
+              Align(
+                alignment: Alignment.center,
+                child: RaisedButton(
+                  onPressed: () => _onClickNeedProject(context),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25)),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  color: AppColors.redAccent,
+                  child: Text(
+                    _need_project,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                      letterSpacing: 1.1,
+                    ),
                   ),
                 ),
               ),

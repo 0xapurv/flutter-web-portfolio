@@ -11,18 +11,17 @@ class AppClipPath extends CustomClipper<Path> {
     Path path = Path();
 
     final divHeight = 1.2;
-    final divWidht = 1.2;
+    final divWidht = 2;
     if (_clipState == CLIP_BOTTOM) {
-      path.lineTo(0, size.height);
+      path.lineTo(0, size.height / divHeight);
       path.quadraticBezierTo(size.width / divWidht, size.height, size.width,
           size.height / divHeight);
       path.lineTo(size.width, 0);
       path.close();
     } else {
       path.lineTo(0, size.height - size.height / divHeight);
-      path.quadraticBezierTo(
-          size.width - size.width / divWidht, 0, size.width, 0);
-      path.lineTo(size.width, 0);
+      path.quadraticBezierTo(size.width - size.width / divWidht, 0, size.width,
+          size.height - size.height / divHeight);
       path.lineTo(size.width, size.height);
       path.lineTo(0, size.height);
       path.close();
