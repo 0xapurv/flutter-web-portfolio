@@ -8,7 +8,7 @@ class Header extends StatelessWidget {
   final String _title = 'Mobile and Web Developer.';
   final String _description =
       'you have a vision i help to build it with all love 😍.';
-  final String _need_project = 'I NEED TO BUILD PROJECT';
+  final String _need_project = 'I NEED TO BUILD A PROJECT';
 
   const Header();
 
@@ -200,13 +200,13 @@ class Header extends StatelessWidget {
                 child: RaisedButton(
                     onPressed: () => _onClickNeedProject(context),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25)),
+                        borderRadius: BorderRadius.circular(30)),
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                     color: AppColors.redAccent,
                     child: Text(
                       _need_project,
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 20,
                         fontWeight: FontWeight.w300,
                         color: Colors.white,
                         letterSpacing: 1.1,

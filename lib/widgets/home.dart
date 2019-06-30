@@ -5,6 +5,7 @@ import 'package:portfolio/widgets/footer.dart';
 import 'package:portfolio/widgets/header.dart';
 import 'package:portfolio/widgets/projects.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
+import 'dart:html' as html;
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -37,7 +38,9 @@ class _HomeState extends State<Home> {
           : null,
       drawer: ResponsiveWidget.isSmallScreen(context) ? _drawer() : null,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          html.window.open("mailto:your_email_here", "Abdelouahed");
+        },
         child: Icon(Icons.sms),
         backgroundColor: AppColors.redAccent,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),

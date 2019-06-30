@@ -1,7 +1,6 @@
 import 'package:flutter_web/material.dart';
 import 'package:portfolio/utils/app_clip_path.dart';
 import 'package:portfolio/utils/colors.dart';
-import 'package:portfolio/widgets/contact.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 import 'dart:html' as html;
 import '../data/projects.dart' as dataprojects;
@@ -26,7 +25,7 @@ class Footer extends StatelessWidget {
 
   Widget _largeScreen(BuildContext context) {
     return Container(
-      height: 500,
+      height: 300,
       child: Stack(children: [
         Image.asset(
           'images/cover.jpg',
@@ -39,40 +38,32 @@ class Footer extends StatelessWidget {
           padding: EdgeInsets.only(
               right: MediaQuery.of(context).size.width / 5,
               left: MediaQuery.of(context).size.width / 5,
-              top: 100,
               bottom: 10),
           color: AppColors.blackTransparent,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  image: AssetImage('images/me.jpg'),
-                                  fit: BoxFit.cover)),
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        _socialIcons(),
-                      ],
-                    ),
-                    Expanded(
-                        child: Align(
-                            alignment: Alignment.centerRight,
-                            child: Container(width: 600, child: Contact()))),
-                  ],
-                ),
+              Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white),
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('images/me.jpg'),
+                            fit: BoxFit.cover)),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  _socialIcons(),
+                ],
               ),
               _copyRight()
             ],
@@ -86,7 +77,7 @@ class Footer extends StatelessWidget {
     return Container(
         color:
             dataprojects.projects.length.isEven ? Colors.black87 : Colors.white,
-        height: 600,
+        height: 300,
         child: Stack(children: [
           Image.asset(
             'images/cover.jpg',
@@ -99,40 +90,32 @@ class Footer extends StatelessWidget {
             padding: EdgeInsets.only(
                 right: MediaQuery.of(context).size.width / 20,
                 left: MediaQuery.of(context).size.width / 20,
-                top: 60,
                 bottom: 10),
             color: AppColors.blackTransparent,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Expanded(
                   child: Column(
                     children: <Widget>[
-                      Align(
-                        alignment: Alignment.center,
-                        child: Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  image: AssetImage('images/me.jpg'),
-                                  fit: BoxFit.cover)),
-                        ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white),
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image: AssetImage('images/me.jpg'),
+                                fit: BoxFit.cover)),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 30,
                       ),
                       _socialIcons(),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Expanded(
-                          child: Align(
-                              alignment: Alignment.centerRight,
-                              child: Container(width: 600, child: Contact()))),
                     ],
                   ),
                 ),
@@ -198,7 +181,7 @@ class Footer extends StatelessWidget {
 
   Widget _copyRight() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
           'Abdelouahed Medjoudja . 2019',
