@@ -7,23 +7,47 @@ import 'package:portfolio/widgets/responsive_widget.dart';
 class Header extends StatelessWidget {
   final String _title = 'Mobile and Web Developer.';
   final String _description =
-      'You have a vision, I help to build it\nwith love 😍.';
+      'You have a vision, I help to build it, with all love 😍.';
   final String _need_project = 'I NEED TO BUILD A PROJECT';
 
   const Header();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: ClipPath(
-        clipper: AppClipPath(AppClipPath.CLIP_BOTTOM),
-        child: ResponsiveWidget(
-          largeScreen: _largeScreen(context),
-          smallScreen: _smallScreen(context),
+    return Stack(children: [
+      Container(
+        color: Colors.white,
+        child: ClipPath(
+          clipper: AppClipPath(AppClipPath.CLIP_BOTTOM),
+          child: ResponsiveWidget(
+            largeScreen: _largeScreen(context),
+            smallScreen: _smallScreen(context),
+          ),
         ),
       ),
-    );
+      Positioned(
+        bottom: 20,
+        width: MediaQuery.of(context).size.width,
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: RaisedButton(
+              onPressed: () => _onClickNeedProject(context),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30)),
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              color: AppColors.redAccent,
+              child: Text(
+                _need_project,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white,
+                  letterSpacing: 1.1,
+                ),
+              )),
+        ),
+      )
+    ]);
   }
 
   Future<void> _showDialog(
@@ -56,7 +80,7 @@ class Header extends StatelessWidget {
 
   Widget _largeScreen(BuildContext context) {
     return Container(
-      height: 600,
+      height: 500,
       child: Stack(children: <Widget>[
         Image.asset(
           'images/cover.jpg',
@@ -193,27 +217,6 @@ class Header extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
-                height: 75,
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: RaisedButton(
-                    onPressed: () => _onClickNeedProject(context),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                    color: AppColors.redAccent,
-                    child: Text(
-                      _need_project,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white,
-                        letterSpacing: 1.1,
-                      ),
-                    )),
-              )
             ],
           ),
         ),
@@ -223,7 +226,7 @@ class Header extends StatelessWidget {
 
   Widget _smallScreen(BuildContext context) {
     return Container(
-      height: 600,
+      height: 450,
       child: Stack(children: [
         Image.asset(
           'images/cover.jpg',
@@ -286,28 +289,6 @@ class Header extends StatelessWidget {
                   color: Colors.grey[300],
                 ),
                 textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: 75,
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: RaisedButton(
-                  onPressed: () => _onClickNeedProject(context),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25)),
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  color: AppColors.redAccent,
-                  child: Text(
-                    _need_project,
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.white,
-                      letterSpacing: 1.1,
-                    ),
-                  ),
-                ),
               ),
             ],
           ),
