@@ -2,14 +2,6 @@
 
 Preview : https://geekabdelouahed.github.io/Flutter-Portfolio
 
-<kbd><img src="screenshot/web1.png" width="400"></kbd>
-<kbd><img src="screenshot/web2.png" width="400"></kbd>
-<kbd><img src="screenshot/web3.png" width="400"></kbd>
-<kbd><img src="screenshot/mobile1.png" width="200"></kbd>
-<kbd><img src="screenshot/mobile2.png" width="200"></kbd>
-<kbd><img src="screenshot/mobile3.png" width="200"></kbd>
-<kbd><img src="screenshot/mobile4.png" width="200"></kbd>
-
 ## License
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 
