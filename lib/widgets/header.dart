@@ -7,7 +7,7 @@ import 'package:portfolio/widgets/responsive_widget.dart';
 class Header extends StatelessWidget {
   final String _title = 'Mobile and Web Developer.';
   final String _description =
-      'you have a vision i help to build it with all love 😍.';
+      'You have a vision, I help to build it\nwith love 😍.';
   final String _need_project = 'I NEED TO BUILD A PROJECT';
 
   const Header();
@@ -188,12 +188,13 @@ class Header extends StatelessWidget {
                 _description,
                 style: TextStyle(
                   fontSize: 25,
-                  color: Colors.grey[300],
+                  fontWeight: FontWeight.w300,
+                  color: Colors.grey[50],
                 ),
                 textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: 50,
+                height: 75,
               ),
               Align(
                 alignment: Alignment.center,
@@ -222,7 +223,7 @@ class Header extends StatelessWidget {
 
   Widget _smallScreen(BuildContext context) {
     return Container(
-      height: 700,
+      height: 600,
       child: Stack(children: [
         Image.asset(
           'images/cover.jpg',
@@ -287,7 +288,7 @@ class Header extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: 40,
+                height: 75,
               ),
               Align(
                 alignment: Alignment.center,
