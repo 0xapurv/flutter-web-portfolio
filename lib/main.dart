@@ -2,7 +2,8 @@ import 'package:flutter_web/cupertino.dart';
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
 import 'package:portfolio/widgets/home.dart';
-import 'package:portfolio/widgets/projects.dart';
+import 'package:portfolio/widgets/project_list.dart';
+import 'package:portfolio/widgets/project_preview.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       routes: {
-        Projects.id: (context) => Projects(),
+        ProjectList.id: (context) => ProjectList(),
+        ProjectPreview.id: (context) => ProjectPreview(),
       },
       home: Home(),
     );

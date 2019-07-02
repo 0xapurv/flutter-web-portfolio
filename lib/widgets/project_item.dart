@@ -1,8 +1,10 @@
 import 'package:flutter_web/material.dart';
+import 'package:flutter_web/widgets.dart';
 import 'package:portfolio/data/projects.dart';
 import 'package:portfolio/utils/flutter_swiper.dart';
+import 'package:portfolio/widgets/app_image.dart';
+import 'package:portfolio/widgets/project_preview.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
-import 'dart:html' as html;
 
 class ProjectItem extends StatefulWidget {
   final Project project;
@@ -25,6 +27,11 @@ class _ProjectItemState extends State<ProjectItem> {
     _primaryColor = widget.index.isEven ? Colors.black87 : Colors.white;
     _seconderyColor = widget.index.isEven ? Colors.grey[700] : Colors.grey[300];
     _tagsColor = widget.index.isEven ? Colors.white : Colors.black87;
+  }
+
+  void _onClickPreview(BuildContext context) {
+    Navigator.of(context)
+        .pushNamed(ProjectPreview.id, arguments: widget.project);
   }
 
   @override
@@ -56,7 +63,7 @@ class _ProjectItemState extends State<ProjectItem> {
                 viewportFraction: .85,
                 scale: .9,
                 itemBuilder: (context, index) =>
-                    Image.asset(widget.project.images[index]),
+                    AppImage(widget.project.images[index]),
               )),
           SizedBox(
             width: 50,
@@ -108,9 +115,7 @@ class _ProjectItemState extends State<ProjectItem> {
                   height: 200,
                 ),
                 OutlineButton(
-                  onPressed: () {
-                    html.window.open(widget.project.link, widget.project.title);
-                  },
+                  onPressed: () => _onClickPreview(context),
                   padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
                   borderSide: BorderSide(color: _primaryColor, width: 2),
                   shape: RoundedRectangleBorder(
@@ -190,6 +195,25 @@ class _ProjectItemState extends State<ProjectItem> {
                             ),
                       )
                       .toList()),
+              SizedBox(
+                height: 20,
+              ),
+              OutlineButton(
+                onPressed: () => _onClickPreview(context),
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+                borderSide: BorderSide(color: _primaryColor, width: 2),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(23),
+                ),
+                child: Text(
+                  'PREVIEW',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w300,
+                    color: _primaryColor,
+                  ),
+                ),
+              )
             ],
           )),
     );

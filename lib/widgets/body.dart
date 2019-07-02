@@ -1,5 +1,5 @@
 import 'package:flutter_web/material.dart';
-import 'package:portfolio/widgets/project.dart';
+import 'package:portfolio/widgets/project_item.dart';
 import '../data/projects.dart' as dataprojects;
 
 class Body extends StatelessWidget {

@@ -12,6 +12,7 @@ final List<Project> projects = [
         'Firebase',
         'One Signal',
       ],
+      logo: 'images/toptaxi/logo.png',
       images: [
         'images/toptaxi/img1.png',
         'images/toptaxi/img2.png',
@@ -31,6 +32,7 @@ final List<Project> projects = [
         'Flutter',
         'One Signal',
       ],
+      logo: 'images/omran/logo.png',
       images: [
         'images/omran/img1.png',
         'images/omran/img2.png',
@@ -48,6 +50,7 @@ final List<Project> projects = [
         'Laravel',
         'One Signal',
       ],
+      logo: 'images/nataloe/logo.png',
       images: [
         'images/nataloe/img1.png',
         'images/nataloe/img2.png',
@@ -63,8 +66,15 @@ class Project {
   final String title;
   final String description;
   final List<String> tags;
+  final String logo;
   final List<String> images;
   final String link;
 
-  Project({this.title, this.description, this.tags, this.images, this.link});
+  Project(
+      {this.title,
+      this.description,
+      this.tags,
+      this.logo,
+      this.images,
+      this.link});
 }

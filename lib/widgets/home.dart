@@ -3,7 +3,7 @@ import 'package:portfolio/utils/colors.dart';
 import 'package:portfolio/widgets/body.dart';
 import 'package:portfolio/widgets/footer.dart';
 import 'package:portfolio/widgets/header.dart';
-import 'package:portfolio/widgets/projects.dart';
+import 'package:portfolio/widgets/project_list.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 import 'dart:html' as html;
 
@@ -90,7 +90,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             ListTile(
-              onTap: () => Navigator.of(context).pushNamed(Projects.id),
+              onTap: () => Navigator.of(context).pushNamed(ProjectList.id),
               title: Text(
                 "PROJECTS",
                 style: TextStyle(
