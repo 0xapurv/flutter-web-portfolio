@@ -2,10 +2,9 @@ import 'package:flutter_web/material.dart';
 import 'package:portfolio/data/projects.dart';
 import 'package:portfolio/utils/colors.dart';
 import 'package:portfolio/utils/flutter_swiper.dart';
-import 'package:portfolio/widgets/app_image.dart';
+import 'package:portfolio/ui/common/app_image.dart';
+import 'package:portfolio/ui/common/responsive_widget.dart';
 import 'dart:html' as html;
-
-import 'package:portfolio/widgets/responsive_widget.dart';
 
 class ProjectPreview extends StatelessWidget {
   static const String id = "project_preview";

@@ -2,9 +2,9 @@ import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
 import 'package:portfolio/data/projects.dart';
 import 'package:portfolio/utils/flutter_swiper.dart';
-import 'package:portfolio/widgets/app_image.dart';
-import 'package:portfolio/widgets/project_preview.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/ui/common/app_image.dart';
+import 'package:portfolio/ui/screens/project_preview.dart';
+import 'package:portfolio/ui/common/responsive_widget.dart';
 
 class ProjectItem extends StatefulWidget {
   final Project project;

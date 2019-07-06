@@ -1,10 +1,10 @@
 import 'package:flutter_web/material.dart';
 import 'package:portfolio/utils/colors.dart';
-import 'package:portfolio/widgets/body.dart';
-import 'package:portfolio/widgets/footer.dart';
-import 'package:portfolio/widgets/header.dart';
-import 'package:portfolio/widgets/project_list.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/ui/common/body.dart';
+import 'package:portfolio/ui/common/footer.dart';
+import 'package:portfolio/ui/common/header.dart';
+import 'package:portfolio/ui/common/responsive_widget.dart';
+import 'package:portfolio/ui/screens/project_list.dart';
 import 'dart:html' as html;
 
 class Home extends StatefulWidget {
@@ -38,9 +38,8 @@ class _HomeState extends State<Home> {
           : null,
       drawer: ResponsiveWidget.isSmallScreen(context) ? _drawer() : null,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          html.window.open("mailto:your_email_here", "Abdelouahed");
-        },
+        onPressed: () =>
+            html.window.open("mailto:your_email_here", "Abdelouahed"),
         child: Icon(Icons.sms),
         backgroundColor: AppColors.redAccent,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),

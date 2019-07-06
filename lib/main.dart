@@ -1,9 +1,9 @@
 import 'package:flutter_web/cupertino.dart';
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
-import 'package:portfolio/widgets/home.dart';
-import 'package:portfolio/widgets/project_list.dart';
-import 'package:portfolio/widgets/project_preview.dart';
+import 'package:portfolio/ui/screens/home.dart';
+import 'package:portfolio/ui/screens/project_list.dart';
+import 'package:portfolio/ui/screens/project_preview.dart';
 
 void main() => runApp(MyApp());
 

@@ -1,9 +1,9 @@
 import 'package:flutter_web/material.dart';
 import 'package:portfolio/utils/app_clip_path.dart';
 import 'package:portfolio/utils/colors.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/ui/common/responsive_widget.dart';
 import 'dart:html' as html;
-import '../data/projects.dart' as dataprojects;
+import 'package:portfolio/data/projects.dart' as dataprojects;
 
 class Footer extends StatelessWidget {
   final double iconSize = 35;

@@ -1,8 +1,8 @@
 import 'package:flutter_web/material.dart';
+import 'package:portfolio/ui/common/responsive_widget.dart';
+import 'package:portfolio/ui/screens/project_list.dart';
 import 'package:portfolio/utils/app_clip_path.dart';
 import 'package:portfolio/utils/colors.dart';
-import 'package:portfolio/widgets/project_list.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
 
 class Header extends StatelessWidget {
   final String _title = 'Mobile and Web Developer.';
